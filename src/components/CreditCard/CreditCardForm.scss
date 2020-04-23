@@ -1,0 +1,51 @@
+.cc__container {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 272px;
+    height: auto;
+    border: 2px solid darkblue;
+    padding: 2rem;
+    background: rgba(52, 235, 201, 0.5);
+    border-radius: 10px;
+    box-shadow: 5px 5px darkcyan;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .cc__fields {
+        margin-bottom: 1rem;
+    }
+    input {
+        height: 27px;
+        width: 260px;
+        padding: 4px;
+        border: 2px solid darkblue;
+        background: aliceblue;
+        border-radius: 5px;
+        box-shadow: 5px 5px darkcyan;
+    }
+
+    .card__details {
+        display: flex;
+        flex-direction: row;
+
+        input {
+            width: 50px;
+        }
+        .cvv {
+            margin-left: 2rem;
+        }
+    }
+    button {
+        width: 150px;
+        height: 47px;
+        background: rgba(102, 102, 255, 0.3);
+        border-radius: 5px;
+        border-color: darkblue;
+        font-size: larger;
+        align-self: flex-end;
+        box-shadow: 5px 5px darkcyan;
+    }
+}
+

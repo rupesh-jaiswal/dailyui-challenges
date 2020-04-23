@@ -1,0 +1,23 @@
+.login-container {
+    left: 50%;
+    top: 50%;
+    position: fixed;
+    &__elements {
+        div {
+            border: 1px solid black;
+            margin-bottom: 10px;
+        }
+    }
+    input {
+        height: 27px;
+        width: 200px;
+        padding: 4px;
+    }
+    button {
+        width: 212px;
+        height: 40px;
+        background: darkturquoise;
+        border-radius: 20px;
+        box-shadow: 4px 4px grey;
+    }
+}

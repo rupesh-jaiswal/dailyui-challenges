@@ -1,0 +1,91 @@
+.society {
+    &__header {
+        display: flex;
+        flex-direction: row;
+        background: black;
+        color: white;
+        height: 84px;
+        width: 100%;
+
+        img {
+            height: 84px;
+            width: 95px;
+        }
+    }
+    &__alert {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 0;
+        width: 60px;
+        background: darkgray;
+        width: 100%;
+        font-size: 1.2em;
+        font-weight: 600;
+
+        div {
+            margin-left: 0.5rem;
+        }
+
+        button {
+            background: black;
+            color: white;
+            border-radius: 5px;
+            margin-right: 1rem;
+        }
+    }
+
+    &__webcam {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: 450px;
+        width: 75%;
+        justify-content: space-around;
+        .cams {
+            background: black;
+            border:2px solid white;
+            min-width: 426px;
+            color: white;
+            min-width: 49%;
+        }
+        .cam1 {
+            background: url('../../images/lift.jpg') no-repeat;
+            background-size: cover;
+            color: black;
+        }
+
+        .cam2 {
+            background: url('../../images/lobby.jpg') no-repeat;
+            background-size: cover;
+            color:black;
+        }
+        .cam3 {
+            background: url('../../images/corridor.jpg') no-repeat;
+            background-size: cover;
+        }
+
+        .cam4 {
+            background: url('../../images/entrance.jpg') no-repeat;
+            background-size: cover;
+        }
+    }
+
+    &__announcement {
+        display: flex;
+        flex-direction: column;
+        background: darkslategrey;
+        height: 450px;
+        width: 72%;
+        color: khaki;
+        h3 {
+            text-align: center;
+        }
+        li {
+            margin-bottom: 1rem;
+        }
+    }
+    &__body {
+        display: flex;
+        flex-direction: row;
+    }
+}
