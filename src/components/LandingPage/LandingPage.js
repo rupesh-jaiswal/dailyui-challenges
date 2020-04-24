@@ -39,7 +39,7 @@ export default class LandingPage extends PureComponent {
                     </ul>
                 </div>
                 </div>
-                <div className="society__header">
+                <div className="society__footer">
                     <h4>Current Secrectary: Rupesh Jaiswal</h4>
                 </div>
             </div>
