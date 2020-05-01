@@ -4,42 +4,64 @@ import './Calculator.scss';
 export default class Calculator extends PureComponent {
 
     state= {
-        cardno: '',
+        value:'',
+        expression: '',
+        controls: ['CE', 'C', 'Del', '/', '7', '8', '9', 'x', '4', '5', '6', '-', '1', '2', '3', '+', '+/-', '0', '.', '='],
     }
-    handleCardNumber = (event) => {
-    const { currentTarget : { value } } = event;
-        
+    handleInputChange = (event) => {
+        const { currentTarget : { value } } = event; 
+        this.setState({ value });
     }
+
+    evaluate(fn) {
+        return new Function('return ' + fn)();
+    }
+
+    handleControls = (control) => {
+        const { value } = this.state;
+        let newValue = value;
+        switch(control) {
+            case 'CE':
+                newValue = '';
+                this.setState({ expression: ''});
+                break;
+            case 'C':
+                    newValue = '';
+                    break;
+            case 'Del':
+                newValue = '';
+                break;
+            case '=':
+                newValue = this.evaluate(value.replace('x','*'));
+                this.setState({ expression: value+'='});
+                break;
+            default: newValue+=control;
+            
+
+        }
+        this.setState({ value: newValue });
+
+    };
+    renderControls = () => {
+        return this.state.controls.map(control => (
+            <button className="controls" onClick={() => this.handleControls(control)}>{control}</button>
+        ));
+    };
     render() {
+        const { value, expression } = this.state;
         return (
-            <div className="cc__container">
-                <div className="cc__fields display">
-                    <div className="expression"> </div>
-                    <input className="result" />
+            <div className="cal__container">
+                <div>
+                    <h1>Basic Calculator</h1>
                 </div>
-                <div className="no__container">
-                    <button className="controls">CE</button>
-                    <button className="controls">C</button>
-                    <button className="controls">Del</button>
-                    <button className="controls">\</button>
-                    <button className="controls">7</button>
-                    <button className="controls">8</button>
-                    <button className="controls">9</button>
-                    <button className="controls">x</button>
-                    <button className="controls">4</button>
-                    <button className="controls">5</button>
-                    <button className="controls">6</button>
-                    <button className="controls">-</button>
-                    <button className="controls">1</button>
-                    <button className="controls">2</button>
-                    <button className="controls">3</button>
-                    <button className="controls">+</button>
-                    <button className="controls">+/-</button>
-                    <button className="controls">0</button>
-                    <button className="controls">.</button>
-                    <button className="controls">=</button>
+                <div className="cal__fields display">
+                    <div className="expression">{expression}</div>
+                    <input className="result" value={value} onChange={this.handleInputChange}/>
+                </div>
+                <div className="cal__no__container">
+                    {this.renderControls()}
                 </div>
             </div>
         )
     }
-}
+} 

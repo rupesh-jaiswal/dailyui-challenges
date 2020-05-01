@@ -1,8 +1,8 @@
-.cc__container {
+.cal {
+    &__container {
     display: flex;
     flex-direction: column;
     text-align: left;
-    width: 272px;
     height: auto;
     border: 2px solid darkblue;
     padding: 2rem;
@@ -13,17 +13,35 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    .cc__fields {
-        margin-bottom: 1rem;
+    width: min-content;
+    .cal__fields {
+        margin-bottom: 2rem;
+    }
+    h1 {
+        margin: 0;
+        color: darkblue;
+    }
+    &__no__container {
+        display: flex;
+        flex-direction: row;
+        .controls {
+            max-width: 50px;
+            height: 50px;
+        }
+    }
+    .expression {
+        height: 30px;
+        font-size: larger;
     }
     input {
-        height: 27px;
+        height: 40px;
         width: 260px;
-        padding: 4px;
+        padding: 7px;
         border: 2px solid darkblue;
         background: aliceblue;
         border-radius: 5px;
         box-shadow: 5px 5px darkcyan;
+        font-size: larger;
     }
 
     .card__details {
@@ -38,14 +56,20 @@
         }
     }
     button {
-        width: 150px;
-        height: 47px;
+        width: 68px;
+        height: 50px;
         background: rgba(102, 102, 255, 0.3);
         border-radius: 5px;
         border-color: darkblue;
         font-size: larger;
         align-self: flex-end;
         box-shadow: 5px 5px darkcyan;
+        &:hover {
+            background: darkblue;
+            color: white;
+            cursor: pointer;
+        }
     }
 }
 
+}
